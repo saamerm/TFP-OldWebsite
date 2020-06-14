@@ -741,3 +741,12 @@ textarea::placeholder {
     margin-top: 5rem;
   }
 }
+canvas {
+  display: block;
+} /* ---- particles.js container ---- */
+#particles-js {
+  position: absolute;
+  width: 100%;
+  background-repeat: repeat-y;
+  height: 100%;
+} 
