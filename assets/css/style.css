@@ -463,6 +463,9 @@ body.loaded .preloader {
   .projects__grid-project__width3 {
     width: 100%;
   }
+  .projects__grid-project figure figcaption div {
+    font-size: 5rem;
+  }  
 }
 @media (max-width: 450px) {
   .projects__grid-project {
@@ -478,6 +481,12 @@ body.loaded .preloader {
   .projects__grid-project__width3 {
     width: 100%;
   }
+  .projects__grid-project figure figcaption div {
+    font-size: 4rem;
+  }  
+  .projects__grid-project figure figcaption {
+    opacity: 1;
+  }    
 }
 .mfp-zoom-in .mfp-with-anim {
   opacity: 0;
@@ -516,6 +525,7 @@ body.loaded .preloader {
 .mfp-title {
   font-size: 3rem;
   letter-spacing: -0.2px;
+  line-height: 30px;
   color: #fff;
 }
 .mfp-bottom-bar {
