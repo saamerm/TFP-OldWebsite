@@ -59,3 +59,54 @@ particlesJS("particles-js", {
   },
   retina_detect: true
 });
+
+$("document").ready(function() {
+  pageViewed();  
+  $("#send_message").click(function()
+  {
+      document.getElementById('form_reponse').innerHTML = "Thank you! We will get back to you within 24 hours";
+      submitMessage();
+      selectAction("SendMessage");
+  });
+  $("#launch_instagram").click(()=>selectAction("Blog"));
+  $("#launch_instagram").click(()=>selectAction("Instagram"));
+  $("#launch_instagram").click(()=>selectAction("Twitter"));
+  $("#launch_instagram").click(()=>selectAction("LinkedIn"));
+  $("#launch_instagram").click(()=>selectAction("Facebook"));
+});
+
+function selectAction(actionType){
+  var url = "https://script.google.com/macros/s/AKfycby-9dsJYQIq0RILPCYKj9dMKkdSYHaJ4oHEKiF3duXfAAkXEiCZ/exec";
+  var myJSObject='{"Event": "' + "SelectAction: " + actionType + '"}';    
+  postCall(url, myJSObject);
+}
+
+function pageViewed() {
+  var url = "https://script.google.com/macros/s/AKfycby-9dsJYQIq0RILPCYKj9dMKkdSYHaJ4oHEKiF3duXfAAkXEiCZ/exec";
+  var myJSObject='{"Event": "' + "PageView" + '"}';    
+  postCall(url, myJSObject);
+}
+
+function postCall(url, myJSObject) {
+  $.ajax({
+  type: "POST",
+  url: url,
+  data: myJSObject,
+  success: function (response) {
+    console.log(response);
+  },
+  error: function (error) {
+    console.log(error.responseText);
+  },
+});
+}
+
+function submitMessage()
+{
+  var url = "https://script.google.com/macros/s/AKfycbyNis6FoIjQr0VqbgOInwAFBkUq7OAlxLEdd-A26p1JX1GFq7E/exec";
+  var Name = document.getElementById('contact_name').value;
+  var Email = document.getElementById('contact_email').value;      
+  var Message = document.getElementById('contact_message').value;      
+  var myJSObject='{"Name": "' + Name + '", "Email" : "' + Email + '", "Message" : "' + Message + '"}';    
+  postCall(url, myJSObject);
+}

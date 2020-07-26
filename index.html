@@ -4,15 +4,25 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="referrer" content="origin-when-cross-origin">
   <title>The First Prototype</title>
   <meta name="description" content="Toronto small business and aspiring entrepreneurs now have an opportunity to expand their audience and have an online presence with enhanced Digital Marketing" />
-  <meta name="keywords" content="Digital Marketing,Web design,Website,Mobile Development,iOS,Android,Hardware,Bitcoin,Arduino,Ethereum,FirstPrototype,Prototype" />
+  <meta name="keywords" content="Digital Marketing, Web design, Website, Mobile Development, iOS, Android, Hardware, Arduino, FirstPrototype, Prototype" />
+  <link rel="canonical" href="https://www.thefirstprototype.com/">  
+  <meta property="og:site_name" content="The First Prototype">
+  <meta property="twitter:site" content="@prototypemakers">
+  <meta property="twitter:card" content="summary">
+  <meta property="twitter:title" content="The First Prototype">
+  <meta property="twitter:image" content="https://thefirstprototype.com/assets/images/author.jpg">
   	<!-- Facebook Open Graph -->
 	<meta property="og:title" content="The First Prototype" />
 	<meta property="og:description" content="Toronto small business and aspiring entrepreneurs now have an opportunity to expand their audience and have an online presence with enhanced Digital Marketing" />
-	<meta property="og:image" content="https://thefirstprototype.com/assets/images/author.jpg" />
+  <meta property="og:image" content="https://thefirstprototype.com/assets/images/author.jpg" />
+  <meta property="og:image:width" content="200">
+  <meta property="og:image:height" content="200">
 	<meta property="og:type" content="website" />
-	<meta property="og:url" content="https://thefirstprototype.com" />
+  <meta property="og:url" content="https://thefirstprototype.com" />
+  <meta name="robots" content="noodp,noydir">
 	<!-- Facebook Open Graph end -->
 
   <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
@@ -197,8 +207,9 @@
             <!-- <form> -->
               <input id="contact_name" type="text" placeholder="first name">
               <input id="contact_email" type="text" placeholder="email address">
-              <textarea placeholder="write message"></textarea>
+              <textarea id="contact_message" placeholder="write message"></textarea>
               <input id="send_message" type="submit" value="send message">
+              <h4 id = "form_reponse"></h4>
             <!-- </form> -->
             <div class="contact__us-single">
               <h6>Toronto, Canada</h6>
@@ -220,11 +231,11 @@
         <div class="footer__content">
           <div class="footer__content-social">
             <ul>
-              <li><a href="https://www.medium.com/@prototypemakers" class="medium">Blog.</a></li>
-              <li><a href="https://www.instagram.com/prototypemakers" class="instagram">Instagram.</a></li>
-              <li><a href="https://www.twitter.com/prototypemakers" class="twitter">Twitter.</a></li>
-              <li><a href="https://www.linkedin.com/company/prototypemakers" class="linkedin">Linkedin.</a></li>
-              <li><a href="https://www.facebook.com/prototypemakers" class="facebook">Facebook.</a></li>
+              <li><a id="launch_blog" href="https://www.medium.com/@prototypemakers" class="medium">Blog.</a></li>
+              <li><a id="launch_instagram" href="https://www.instagram.com/prototypemakers" class="instagram">Instagram.</a></li>
+              <li><a id="launch_twitter" href="https://www.twitter.com/prototypemakers" class="twitter">Twitter.</a></li>
+              <li><a id="launch_linkedin" href="https://www.linkedin.com/company/prototypemakers" class="linkedin">Linkedin.</a></li>
+              <li><a id="launch_facebook" href="https://www.facebook.com/prototypemakers" class="facebook">Facebook.</a></li>
             </ul>
           </div>
           <div class="footer__content-copy">
@@ -242,13 +253,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
   <script>
     $(window).on('load', function () {
-      $("body").addClass("loaded");
-      $("#send_message").click(function()
-      {
-          var name = document.getElementById('contact_name').value;
-          var email = document.getElementById('contact_email').value;
-          document.location.href = "mailto:info@thefirstprototype.com?subject=Interest Form&body=Hi, \nI am interested in learning about how TFP can empower my company. \nRegards, \n" + name + " " + email;
-      });
+      $("body").addClass("loaded");    
       $('.projects__grid').magnificPopup({
         delegate: 'a',
         type: 'image',
